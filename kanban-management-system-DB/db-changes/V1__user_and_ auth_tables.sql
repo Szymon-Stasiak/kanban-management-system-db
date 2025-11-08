@@ -39,6 +39,6 @@ CREATE TRIGGER trg_users_updated_at
 
 CREATE TABLE IF NOT EXISTS revoked_tokens (
     token VARCHAR(500) PRIMARY KEY,
-    revoked_at TIMESTAMP DEFAULT NOW()
+    revoked_at TIMESTAMP DEFAULT NOW(),
     valid_until TIMESTAMP NOT NULL
 );
