@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS public.boards (
     id SERIAL PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
     description TEXT,
-    project_id UUID NOT NULL REFERENCES public.projects(project_id) ON DELETE CASCADE,
+    project_id UUID NOT NULL REFERENCES public.projects(public_project_id) ON DELETE CASCADE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
