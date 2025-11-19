@@ -2,6 +2,7 @@ CREATE TABLE IF NOT EXISTS public.tasks (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
+    position INTEGER NOT NULL DEFAULT 0,
 
     column_id INTEGER NOT NULL REFERENCES public.columns(id) ON DELETE CASCADE,
 
