@@ -2,6 +2,8 @@ CREATE TABLE IF NOT EXISTS public.tasks (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     description TEXT,
+    completed BOOLEAN NOT NULL DEFAULT FALSE,
+    priority VARCHAR(10) CHECK (priority IN ('low', 'medium', 'high')) DEFAULT 'medium',
 
     column_id INTEGER NOT NULL REFERENCES public.columns(id) ON DELETE CASCADE,
 
