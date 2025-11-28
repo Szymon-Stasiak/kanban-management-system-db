@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS public.columns (
     position INTEGER NOT NULL DEFAULT 0,
     board_id INTEGER NOT NULL REFERENCES public.boards(id) ON DELETE CASCADE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     CONSTRAINT unique_board_column_position UNIQUE (board_id, position)
 );
 
